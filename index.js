@@ -2,7 +2,6 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
-const { ActivityType } = require('discord.js');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -35,16 +34,6 @@ for (const file of eventFiles) {
 	} else {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
-}
-
-client.on('ready', () => {
-    client.user.setPresence({ 
-        activities: [{ 
-            name: 'in the JS interpreter', 
-            type: ActivityType.Playing
-        }], 
-        status: 'online' 
-    });
-});
+};
 
 client.login(token);
