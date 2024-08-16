@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { statuses } = require('./statuses.js');
+const { statuses } = require('../statuses.js');
 const { ActivityType } = require('discord.js');;
 
 function sleep(ms) {
