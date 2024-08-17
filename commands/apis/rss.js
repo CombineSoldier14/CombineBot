@@ -16,18 +16,15 @@ module.exports = {
         ),
     
     async execute (interaction) {
-        const rsslink = interaction.options.getString('rsslink')
-        const feed = await parser.parseURL(rsslink)
-        let fields = []
-        for (let item in feed.items) {
-            if (fields.length > 24) {
-                break;
-            };
-            fields.push({ name: item.title, value: `[Link to post](${item.link})` });
-        };
+        const rsslink = interaction.options.getString('rsslink');
+        const feed = await parser.parseURL(rsslink);
+        let fields = [];
+        feed.items.forEach(item =>
+            fields.push({ name: item.title, value: `[Link to post](${item.link})` })
+        )
         embed.setTitle(feed.title);
         embed.setDescription(feed.description);
         embed.setFields(fields);
-        await interaction.reply({ embeds: [embed] })
+        await interaction.reply({ embeds: [embed] });
     }
 }
