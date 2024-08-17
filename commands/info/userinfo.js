@@ -1,6 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { embed } = require('../../core/combinejs.js');
-const { EmbedBuilder } = require('discord.js');
 
 
 module.exports = {

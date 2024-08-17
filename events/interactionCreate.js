@@ -39,7 +39,7 @@ module.exports = {
 			const errorRow = new ActionRowBuilder()
 				.addComponents(reportErrorButton, reportGithubIssue)
 
-			const response = await interaction.followUp({ embeds: [errorEmbed], components: [errorRow] });
+			const response = await interaction.channel.send({ embeds: [errorEmbed], components: [errorRow] });
 
 			const collectorFilter = i => i.user.id === interaction.user.id;
 
