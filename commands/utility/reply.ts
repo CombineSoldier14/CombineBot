@@ -4,19 +4,19 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('reply')
         .setDescription('Make the bot reply to a message!')
-        .addStringOption(option =>
+        .addStringOption((option: any) =>
             option
                 .setName('text')
                 .setDescription('Text for the bot to say!')
                 .setRequired(true)
         )
-        .addStringOption(option =>
+        .addStringOption((option: any) =>
             option
                 .setName('msg_id')
                 .setDescription('Message ID of the message to reply to.')
                 .setRequired(true)
         ),
-        async execute(interaction) {
+        async execute(interaction: any) {
             const text = interaction.options.getString('text')
             const id = interaction.options.getString('msg_id')
             const message = await interaction.channel.messages.fetch(id)

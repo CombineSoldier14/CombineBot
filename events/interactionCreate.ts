@@ -1,11 +1,12 @@
 const { Events } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
 const { ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
-const { error_reports } = require('./webhooks.ts')
+require('dotenv').config();
+
 
 module.exports = {
 	name: Events.InteractionCreate,
-	async execute(interaction) {
+	async execute(interaction: any) {
 		if (!interaction.isChatInputCommand()) return;
 
 		const command = interaction.client.commands.get(interaction.commandName);
@@ -40,8 +41,7 @@ module.exports = {
 				.addComponents(reportErrorButton, reportGithubIssue)
 
 			const response = await interaction.channel.send({ embeds: [errorEmbed], components: [errorRow] });
-
-			const collectorFilter = i => i.user.id === interaction.user.id;
+			const collectorFilter = (i: any) => i.user.id === interaction.user.id;
 
 			const confirmation = await response.awaitMessageComponent({ filter: collectorFilter });
 
@@ -50,7 +50,7 @@ module.exports = {
 				errorRow.components[0].setLabel('Error Reported!')
 				await interaction.editReply({ components: [errorRow] })
 				await interaction.followUp({ content: 'Error has been reported!' });
-				fetch(error_reports, {
+				fetch(process.env.ERROR_WEBHOOK, {
 					method: "POST",
 					body: JSON.stringify({
 				 	 content: `<@951639877768863754>\n# Error Occurred!\n Command: /${interaction.commandName}`

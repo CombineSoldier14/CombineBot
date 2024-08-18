@@ -5,68 +5,68 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('dndrng')
         .setDescription('Roll some DND dice')
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('d4')
                 .setDescription('How many times to roll the D4 dice.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('d6')
                 .setDescription('How many times to roll the D6 dice.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('d8')
                 .setDescription('How many times to roll the D8 dice.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('d10')
                 .setDescription('How many times to roll the D10 dice.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('d12')
                 .setDescription('How many times to roll the D12 dice.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('d20')
                 .setDescription('How many times to roll the D20 dice.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('d100')
                 .setDescription('How many times to roll the D100 dice.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('extraadd')
                 .setDescription('Any extra numbers to be added')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('extraminus')
                 .setDescription('Any extrea numbers to be subtracted')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('custommax')
                 .setDescription('A custom maximum.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('custommin')
                 .setDescription('A custom minimum.')
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('customamount')
                 .setDescription('Amount to do the custom min/max. If left undefined, this is one.')
         ),
     
-    async execute(interaction) {
+    async execute(interaction: any) {
         var total = 0;
         var d4 = interaction.options.getNumber('d4') as number;
         var d6 = interaction.options.getNumber('d6') as number;

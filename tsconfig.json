@@ -6,8 +6,24 @@
       "sourceMap": true,
       "skipLibCheck": true,
       "target": "ES6",
-      "outDir": "output"
+      "outDir": "output",
+      "strict": false
+
     },
-    
-    "include": ["./*", "./core/*", "./events/*", "./commands/apis/*", "./commands/calculator/*", "./commands/fun/*", "./commands/info/*", "./commands/mbti/*", "./commands/utility/*"]
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@discordjs/typings",
+      "./node_modules/discord-api-types/"
+    ],
+    "include": ["./*", 
+                "./config.json",
+                "./core/*",
+                "./events/*",
+                "./commands/apis/*",
+                "./commands/calculator/*",
+                "./commands/fun/*",
+                "./commands/info/*",
+                "./commands/mbti/*",
+                "./commands/utility/*"
+              ]
   }

@@ -4,13 +4,13 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('say')
         .setDescription('Make the bot say a message!')
-        .addStringOption(option =>
+        .addStringOption((option: any) =>
             option
                 .setName('text')
                 .setDescription('Text for the bot to say!')
                 .setRequired(true)
         ),
-        async execute(interaction) {
+        async execute(interaction: any) {
             const text = interaction.options.getString('text')
             await interaction.reply({ content: "Message has been sent!", ephemeral: true })
             await interaction.channel.send(text)

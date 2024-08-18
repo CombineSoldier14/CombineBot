@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { embed } = require('../../core/combinejs.ts');
-const { eightball_list } = require('../../core/lists.ts')
+const { embed } = require('../../core/combinejs.js');
+const { eightball_list } = require('../../core/lists.js')
 const rn = require('random-number');
 const options = {
     min: 0, 
@@ -14,14 +14,14 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('8ball')
         .setDescription('Roll the Magic 8 Ball!')
-        .addStringOption(option =>
+        .addStringOption((option: any) =>
             option
                 .setName('question')
                 .setDescription('Question to ask the 8 ball')
                 .setRequired(true)
         ),
 
-    async execute(interaction) {
+    async execute(interaction: any) {
         const question = interaction.options.getString('question')
         embed.setTitle(question)
         embed.setDescription(eight_choice)

@@ -4,32 +4,32 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('disc2mbti')
         .setDescription('Convert your indigo DISC scores to MBTI!')
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('d')
                 .setDescription('Your Dominance Score')
                 .setRequired(true)
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('i')
                 .setDescription('Your Influence Score')
                 .setRequired(true)
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('s')
                 .setDescription('Your Steadiness Score')
                 .setRequired(true)
         )
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('c')
                 .setDescription('Your Compliance Score')
                 .setRequired(true)
         ),
     
-    async execute(interaction) {
+    async execute(interaction: any) {
         const D = interaction.options.getNumber('d');
         const I = interaction.options.getNumber('i');
         const S = interaction.options.getNumber('s');

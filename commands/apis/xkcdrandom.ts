@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { get, embed } = require('../../core/combinejs.ts');
+const { get, embed } = require('../../core/combinejs.js');
 const rn = require('random-number');
 
 const options = {
@@ -13,7 +13,7 @@ module.exports = {
         .setName('xkcdrandom')
         .setDescription('Get a random XKCD comic!'),
     
-    async execute (interaction) {
+    async execute (interaction: any) {
         const request = await get(`https://xkcd.com/${rn(options)}/info.0.json`);
         const response = await request.json();
         embed.setTitle(`#${response.num} - ${response.title}`);

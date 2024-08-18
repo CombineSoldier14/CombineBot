@@ -1,17 +1,17 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { get, embed } = require('../../core/combinejs.ts');
+const { get, embed } = require('../../core/combinejs.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('xkcd')
         .setDescription('Get a specified or the recent XKCD comic!')
-        .addNumberOption(option =>
+        .addNumberOption((option: any) =>
             option
                 .setName('comicnum')
                 .setDescription('Number of comic to get. If left blank, this will be recent.')
         ),
     
-    async execute (interaction) {
+    async execute (interaction: any) {
         let comicnum = interaction.options.getNumber('comicnum');
         if (comicnum == null) {
             var comicnum1 = "";

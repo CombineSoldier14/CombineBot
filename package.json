@@ -5,16 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "tsc",
+    "run-ts": "tsc --build --verbose && cd output && cp .env output && echo ---------------- && node index.js"
   },
   "author": "CombineSoldier14",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
     "random-number": "^0.0.9",
-    "ts-node": "^10.9.2"
+    "rss-parser": "^3.13.0"
   },
   "devDependencies": {
+    "discord-api-types": "^0.37.94",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
 }

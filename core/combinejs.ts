@@ -1,8 +1,8 @@
 const { EmbedBuilder } = require('discord.js');
-const { VERSION } = require('./otherconfig.json');
+require('dotenv').config();
 
 const embed = new EmbedBuilder()
-        .setFooter({text: `CombineJS v${VERSION}`, iconURL: 'https://i.postimg.cc/T3XH8Rwm/image.png'})
+        .setFooter({text: `CombineJS v${process.env.VERSION}`, iconURL: 'https://i.postimg.cc/T3XH8Rwm/image.png'})
 
 const get = async (url: string) => {
         var response = await fetch(url, {
