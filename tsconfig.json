@@ -7,5 +7,5 @@
       "skipLibCheck": true,
       "target": "ES6"
     },
-    "include": ["./*"]
+    "include": ["./*", "./core/*", "./events/*", "./commands/apis/*", "./commands/calculator/*", "./commands/fun/*", "./commands/info/*", "./commands/mbti/*", "./commands/utility/*"]
   }
