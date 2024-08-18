@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { embed } = require('../../core/combinejs.js');
-const { eightball_list } = require('../../core/lists.js')
+const { embed } = require('../../core/combinejs.ts');
+const { eightball_list } = require('../../core/lists.ts')
 const rn = require('random-number');
 const options = {
     min: 0, 
@@ -8,7 +8,7 @@ const options = {
     integer: true
   }
 
-eight_choice = eightball_list[rn(options)]
+var eight_choice = eightball_list[rn(options)]
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -30,3 +30,4 @@ module.exports = {
         await interaction.reply({ embeds: [embed] })
     }
 }
+export {};

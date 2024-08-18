@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { get } = require('../../core/combinejs.js');
+const { get } = require('../../core/combinejs.ts');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -12,3 +12,4 @@ module.exports = {
         await interaction.reply(response.joke);
     }
 }
+export {};

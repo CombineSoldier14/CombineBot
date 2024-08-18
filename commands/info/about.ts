@@ -37,3 +37,4 @@ module.exports = {
 		await interaction.reply({ embeds: [aboutEmbed], components: [row] });
 	},
 };
+export {};

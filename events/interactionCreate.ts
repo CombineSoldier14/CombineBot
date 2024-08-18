@@ -1,7 +1,7 @@
 const { Events } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
 const { ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
-const { error_reports } = require('./webhooks.js')
+const { error_reports } = require('./webhooks.ts')
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -70,3 +70,4 @@ module.exports = {
 		}
 	},
 };
+export {};

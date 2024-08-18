@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { statuses } = require('../statuses.js');
+const { statuses } = require('../statuses.ts');
 const { ActivityType } = require('discord.js');;
 
 function sleep(ms) {
@@ -28,3 +28,4 @@ module.exports = {
 		};
 	},
 };
+export {};

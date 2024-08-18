@@ -16,3 +16,5 @@ module.exports = {
             await interaction.channel.send(text)
         }
 }
+
+export {};

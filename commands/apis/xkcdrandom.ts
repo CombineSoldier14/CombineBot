@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { get, embed } = require('../../core/combinejs.js');
+const { get, embed } = require('../../core/combinejs.ts');
 const rn = require('random-number');
 
 const options = {
@@ -23,3 +23,4 @@ module.exports = {
         await interaction.reply({ embeds: [embed] });
     }
 }
+export {};

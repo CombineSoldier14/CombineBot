@@ -24,3 +24,5 @@ module.exports = {
             await message.reply(text)
         }
 }
+
+export {};

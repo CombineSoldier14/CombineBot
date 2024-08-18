@@ -8,3 +8,4 @@ module.exports = {
 		await interaction.reply(':earth_americas: Hello world!');
 	},
 };
+export {};

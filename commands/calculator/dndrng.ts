@@ -68,18 +68,18 @@ module.exports = {
     
     async execute(interaction) {
         var total = 0;
-        var d4 = interaction.options.getNumber('d4');
-        var d6 = interaction.options.getNumber('d6');
-        var d8 = interaction.options.getNumber('d8');
-        var d10 = interaction.options.getNumber('d10');
-        var d12 = interaction.options.getNumber('d12');
-        var d20 = interaction.options.getNumber('d20');
-        var d100 = interaction.options.getNumber('d100');
-        var extraadd = interaction.options.getNumber('extraadd');
-        var extraminus = interaction.options.getNumber('extraminus');
-        var custommax = interaction.options.getNumber('custommax');
-        var custommin = interaction.options.getNumber('custommin');
-        var customamount = interaction.options.getNumber('customamount');
+        var d4 = interaction.options.getNumber('d4') as number;
+        var d6 = interaction.options.getNumber('d6') as number;
+        var d8 = interaction.options.getNumber('d8') as number;
+        var d10 = interaction.options.getNumber('d10') as number;
+        var d12 = interaction.options.getNumber('d12') as number;
+        var d20 = interaction.options.getNumber('d20') as number;
+        var d100 = interaction.options.getNumber('d100') as number;
+        var extraadd = interaction.options.getNumber('extraadd') as number;
+        var extraminus = interaction.options.getNumber('extraminus') as number;
+        var custommax = interaction.options.getNumber('custommax') as number;
+        var custommin = interaction.options.getNumber('custommin') as number;
+        var customamount = interaction.options.getNumber('customamount') as number;
         if (d4 == null) {
             var d4 = 0;
         };
@@ -146,3 +146,4 @@ module.exports = {
         
     }
 }
+export {};

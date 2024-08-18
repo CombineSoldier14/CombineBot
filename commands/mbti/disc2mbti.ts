@@ -66,3 +66,4 @@ module.exports = {
         await interaction.channel.send(`*${longie}, ${longsn}, ${longtf}, and ${longjp}*`)
     }
 }
+export {};

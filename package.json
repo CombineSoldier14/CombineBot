@@ -11,6 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.15.3",
-    "random-number": "^0.0.9"
+    "random-number": "^0.0.9",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
   }
 }
