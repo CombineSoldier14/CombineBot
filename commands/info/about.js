@@ -13,8 +13,13 @@ const ghbutton = new ButtonBuilder()
      .setStyle(ButtonStyle.Link)
      .setURL('https://github.com/CombineSoldier14/CombineJS')
 
+const invitebutton = new ButtonBuilder()
+     .setLabel('Invite the bot!')
+     .setStyle(ButtonStyle.Link)
+     .setURL('https://shorturl.at/uFVo8')
+
 const row = new ActionRowBuilder()
-     .addComponents(learnmore, ghbutton)
+     .addComponents(learnmore, ghbutton, invitebutton)
 
 module.exports = {
 	data: new SlashCommandBuilder()
