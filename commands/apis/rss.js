@@ -23,7 +23,12 @@ module.exports = {
             fields.push({ name: item.title, value: `[Link to post](${item.link})` })
         )
         embed.setTitle(feed.title);
-        embed.setDescription(feed.description);
+        if (feed.description = null) {
+            var desc = "";
+        } else {
+            var desc = feed.description;
+        }
+        embed.setDescription(desc);
         embed.setFields(fields);
         await interaction.reply({ embeds: [embed] });
     }
