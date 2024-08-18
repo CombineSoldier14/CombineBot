@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
+const { FILEEX } = require('./lookforfile.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -11,7 +12,7 @@ const commandFolders = fs.readdirSync(foldersPath);
 
 for (const folder of commandFolders) {
 	const commandsPath = path.join(foldersPath, folder);
-	const commandFiles = fs.readdirSync(commandsPath).filter((file: any) => file.endsWith('.ts'));
+	const commandFiles = fs.readdirSync(commandsPath).filter((file: any) => file.endsWith(FILEEX));
 	for (const file of commandFiles) {
 		const filePath = path.join(commandsPath, file);
 		const command = require(filePath);
@@ -24,7 +25,7 @@ for (const folder of commandFolders) {
 }
 
 const eventsPath = path.join(__dirname, 'events');
-const eventFiles = fs.readdirSync(eventsPath).filter((file: any) => file.endsWith('.ts'));
+const eventFiles = fs.readdirSync(eventsPath).filter((file: any) => file.endsWith(FILEEX));
 
 for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
