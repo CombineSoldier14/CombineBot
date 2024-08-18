@@ -5,7 +5,9 @@
       "preserveConstEnums": true,
       "sourceMap": true,
       "skipLibCheck": true,
-      "target": "ES6"
+      "target": "ES6",
+      "outDir": "output"
     },
+    
     "include": ["./*", "./core/*", "./events/*", "./commands/apis/*", "./commands/calculator/*", "./commands/fun/*", "./commands/info/*", "./commands/mbti/*", "./commands/utility/*"]
   }
