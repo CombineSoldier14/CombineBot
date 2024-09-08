@@ -6,4 +6,8 @@ COPY . /docker
 
 RUN npm install
 
-CMD ["npm", "run", "start"]
+RUN tsc
+
+RUN cd output
+
+CMD ["node", "index.js"]
