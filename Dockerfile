@@ -1,7 +1,9 @@
 FROM node:22
 
-WORKDIR /CombineJS
+WORKDIR /docker
+
+COPY . /docker
 
 RUN npm install
 
-CMD ["node", "index.js"]
+CMD ["npm", "run", "start"]
