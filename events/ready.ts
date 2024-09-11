@@ -11,21 +11,23 @@ module.exports = {
 	once: true,
 	async execute(client: any) {
 		console.log(`Ready! Logged in as ${client.user.tag}`);
-		for (let status in statuses) {
-			if (statuses[status].type == "PLAYING") {
-				var truetype = ActivityType.Playing;
-			} else {
-				var truetype = ActivityType.Watching;
+		while (true) {
+			for (let status in statuses) {
+				if (statuses[status].type == "PLAYING") {
+					var truetype = ActivityType.Playing;
+				} else {
+					var truetype = ActivityType.Watching;
+				};
+				client.user.setPresence({ 
+					activities: [{ 
+						name: statuses[status].status, 
+						type: truetype
+					}],
+					status: 'online' 
+				});
+				await sleep(30000);
 			};
-			client.user.setPresence({ 
-				activities: [{ 
-					name: statuses[status].status, 
-					type: truetype
-				}],
-				status: 'online' 
-			});
-			await sleep(30000);
-		};
+	       };
 	},
 };
 export {};
