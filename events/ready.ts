@@ -12,7 +12,7 @@ module.exports = {
 	async execute(client: any) {
 		console.log(`Ready! Logged in as ${client.user.tag}`);
 		while (true) {
-			for (let status in statuses) {
+			
 				if (statuses[status].type == "PLAYING") {
 					var truetype = ActivityType.Playing;
 				} else {
@@ -26,7 +26,7 @@ module.exports = {
 					status: 'online' 
 				});
 				await sleep(30000);
-			};
+			
 	       };
 	},
 };
