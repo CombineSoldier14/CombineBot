@@ -11,23 +11,13 @@ module.exports = {
 	once: true,
 	async execute(client: any) {
 		console.log(`Ready! Logged in as ${client.user.tag}`);
-		while (true) {
-			
-				if (statuses[status].type == "PLAYING") {
-					var truetype = ActivityType.Playing;
-				} else {
-					var truetype = ActivityType.Watching;
-				};
 				client.user.setPresence({ 
 					activities: [{ 
-						name: statuses[status].status, 
-						type: truetype
+						name: "https://combinesoldier14.site/combinebot", 
+						type: ActivityType.Playing
 					}],
 					status: 'online' 
 				});
-				await sleep(30000);
-			
-	       };
 	},
 };
 export {};
