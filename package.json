@@ -16,12 +16,13 @@
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5",
     "random-number": "^0.0.9",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@types/node": "^22.8.7",
     "discord-api-types": "^0.37.94",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.7.2"
   }
 }
