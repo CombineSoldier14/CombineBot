@@ -1,6 +1,6 @@
 {
   "name": "CombineJS",
-  "version": "1.0.0",
+  "version": "1.1.9",
   "description": "A discord bot created in discord.js with plenty of slash commands for moderation and fun!",
   "main": "index.js",
   "scripts": {
@@ -15,12 +15,13 @@
     "cowsay": "^1.6.0",
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5",
+    "expr-eval": "^2.0.2",
     "random-number": "^0.0.9",
     "rss-parser": "^3.13.0",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@types/node": "^22.8.7",
+    "@types/node": "^22.9.4",
     "discord-api-types": "^0.37.94",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"

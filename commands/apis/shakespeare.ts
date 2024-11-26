@@ -16,7 +16,7 @@ module.exports = {
     async execute(interaction: any) {
         await interaction.deferReply();
         const usertext = interaction.options.getString('text');
-        const r = await CombineJS.getShake(usertext)
+        const r = await CombineJS.getShakespeare(usertext)
         await interaction.editReply(r.contents.translated);
     }
 }

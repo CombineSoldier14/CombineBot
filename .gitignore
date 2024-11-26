@@ -1,4 +1,4 @@
-.env
-node_modules
-events/webhooks.js
-./output
+*.env
+node_modules/
+package-lock.json
+output/

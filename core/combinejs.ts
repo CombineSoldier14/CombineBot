@@ -22,7 +22,7 @@ class core {
                 return response;
         }
 
-        async post (url: string, body: string) {
+        async post (url: string, body: object) {
                 var response = await fetch(url, {
                         method: "POST",
 		        body: JSON.stringify(body),
@@ -39,9 +39,15 @@ class core {
                 return response;
         }
 
-        async getShake(text: string) {
+        async getShakespeare(text: string) {
                 const r = await this.get(`https://api.funtranslations.com/translate/shakespeare.json?text=${text}`);
                 return r.json();
+        }
+
+        async getRandomReddit(sub: string) {
+                const r = await this.get(`https://meme-api.com/gimme/${sub}`);
+                const j = r.json();
+                return j;
         }
 }
 

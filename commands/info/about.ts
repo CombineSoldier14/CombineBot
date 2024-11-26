@@ -26,15 +26,20 @@ module.exports = {
 		.setName('about')
 		.setDescription('About the bot'),
 	async execute(interaction: any) {
-        const aboutEmbed = new EmbedBuilder()
+          await interaction.channel.send('Loading data...').then (async (msg) => {
+          msg.delete();
+          const latency = `${msg.createdTimestamp - interaction.createdTimestamp} ms`
+          const aboutEmbed = new EmbedBuilder()
               .setColor(0xffd700)
               .setTitle(`About ${process.env.NAME} v${process.env.VERSION}`)
               .setDescription(`${process.env.NAME} is a discord bot written in JavaScript on discord.js, with many slash commands for moderation and fun!\n${process.env.NAME}'s birthday is **8/13/2024**.`)
               .setFields(
-                   { name: "Latest Addition", value: `${process.env.LATEST_ADDITION}` }
+                   { name: "Latest Addition", value: `${process.env.LATEST_ADDITION}` },
+                   { name: "Ping/Latency :ping_pong:", value: latency }
               )
-    .setThumbnail('https://cdn.discordapp.com/avatars/1254653481978167346/65b694dd9593cd55f3a49096f9a35319.png?size=1024')
+              .setThumbnail('https://cdn.discordapp.com/avatars/1254653481978167346/65b694dd9593cd55f3a49096f9a35319.png?size=1024')
 		await interaction.reply({ embeds: [aboutEmbed], components: [row] });
+        });
 	},
 };
 export {};
