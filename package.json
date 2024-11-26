@@ -21,7 +21,7 @@
     "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@types/node": "^22.9.4",
+    "@types/node": "^22.10.0",
     "discord-api-types": "^0.37.94",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
