@@ -2,10 +2,16 @@ const { EmbedBuilder } = require('discord.js');
 require('dotenv').config();
 
 class core {
-        embed() {
+        async embed() {
                 const embed = new EmbedBuilder();
-                embed.setFooter({text: `CombineJS v${process.env.VERSION}`, iconURL: 'https://i.postimg.cc/T3XH8Rwm/image.png'});
+                const info = await this.getBotInfo();
+                embed.setFooter({text: `CombineJS v${info.VERSION}`, iconURL: 'https://i.postimg.cc/T3XH8Rwm/image.png'});
                 return embed;
+        }
+
+        async getBotInfo() {
+                const j = require('../info.json');
+                return j;
         }
 
         async get(url: string) {
@@ -37,17 +43,6 @@ class core {
                 })
 
                 return response;
-        }
-
-        async getShakespeare(text: string) {
-                const r = await this.get(`https://api.funtranslations.com/translate/shakespeare.json?text=${text}`);
-                return r.json();
-        }
-
-        async getRandomReddit(sub: string) {
-                const r = await this.get(`https://meme-api.com/gimme/${sub}`);
-                const j = r.json();
-                return j;
         }
 }
 
