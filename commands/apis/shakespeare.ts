@@ -16,8 +16,9 @@ module.exports = {
     async execute(interaction: any) {
         await interaction.deferReply();
         const usertext = interaction.options.getString('text');
-        const r = await CombineJS.getShakespeare(usertext)
-        await interaction.editReply(r.contents.translated);
+        const r = await this.get(`https://api.funtranslations.com/translate/shakespeare.json?text=${usertext}`);
+        const j = await r.json();
+        await interaction.editReply(j.contents.translated);
     }
 }
 
