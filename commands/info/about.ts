@@ -1,12 +1,12 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
 const { ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
-require('dotenv').config();
+const { CombineJS } = require('../../core/combinejs.js');
 
 const learnmore = new ButtonBuilder()
      .setLabel('Learn More!')
      .setStyle(ButtonStyle.Link)
-     .setURL('http://www.combinesoldier14.site/p/ultrabot-links-faq.html')
+     .setURL('http://combinesoldier14.site/combinebot')
 
 const ghbutton = new ButtonBuilder()
      .setLabel('GitHub')
@@ -26,15 +26,16 @@ module.exports = {
 		.setName('about')
 		.setDescription('About the bot'),
 	async execute(interaction: any) {
+          const info = await CombineJS.getBotInfo();
           await interaction.channel.send('Loading data...').then (async (msg) => {
           msg.delete();
           const latency = `${msg.createdTimestamp - interaction.createdTimestamp} ms`
           const aboutEmbed = new EmbedBuilder()
               .setColor(0xffd700)
-              .setTitle(`About ${process.env.NAME} v${process.env.VERSION}`)
-              .setDescription(`${process.env.NAME} is a discord bot written in JavaScript on discord.js, with many slash commands for moderation and fun!\n${process.env.NAME}'s birthday is **8/13/2024**.`)
+              .setTitle(`About ${info.NAME} v${info.VERSION}`)
+              .setDescription(`${info.NAME} is a discord bot written in JavaScript on discord.js, with many slash commands for moderation and fun!\n${info.NAME}'s birthday is **8/13/2024**.`)
               .setFields(
-                   { name: "Latest Addition", value: `${process.env.LATEST_ADDITION}` },
+                   { name: "Latest Addition", value: `${info.LATEST_ADDITION}` },
                    { name: "Ping/Latency :ping_pong:", value: latency }
               )
               .setThumbnail('https://cdn.discordapp.com/avatars/1254653481978167346/65b694dd9593cd55f3a49096f9a35319.png?size=1024')
