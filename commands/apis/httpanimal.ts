@@ -29,7 +29,7 @@ module.exports = {
             await interaction.reply(':x: Animal for status code does not exist!');
             return;
         }
-        const embed = CombineJS.embed();
+        const embed = await CombineJS.embed();
         embed
             .setTitle(`${animal} ${code}`)
             .setImage(`https://http.${animal}/${code}.jpg`)
