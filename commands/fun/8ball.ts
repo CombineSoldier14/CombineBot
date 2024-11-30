@@ -24,7 +24,7 @@ module.exports = {
 
     async execute(interaction: any) {
         const question = interaction.options.getString('question')
-        let embed = CombineJS.embed();
+        let embed = await CombineJS.embed();
         embed.setTitle(question)
         embed.setDescription(eight_choice)
         embed.setColor(0x696969)
