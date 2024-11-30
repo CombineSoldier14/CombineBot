@@ -16,7 +16,7 @@ module.exports = {
     async execute (interaction: any) {
         const request = await CombineJS.get(`https://xkcd.com/${rn(options)}/info.0.json`);
         const response = await request.json();
-        let embed = CombineJS.embed();
+        let embed = await CombineJS.embed();
         embed.setTitle(`#${response.num} - ${response.title}`);
         embed.setDescription(`${response.alt}`);
         embed.setFooter({text: `${response.month}/${response.day}/${response.year}`});
