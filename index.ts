@@ -4,7 +4,7 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 
 require('dotenv').config()
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
@@ -40,6 +40,16 @@ for (const file of eventFiles) {
 client
     .on("debug", console.log)
     .on("warn", console.log)
+
+	// testing message listeners for future SQL integration
+
+	/*
+	.on('messageCreate', async (message) => {
+		if (message.author.bot){ return };
+		console.log("cool");
+		await message.channel.send('cool');
+	});
+	*/
 
 client.login(process.env.TOKEN);
 export {};
