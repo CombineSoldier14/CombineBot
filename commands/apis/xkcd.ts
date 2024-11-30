@@ -18,7 +18,7 @@ module.exports = {
         } else {
             var comicnum1 = `/${comicnum}`;
         };
-        let embed = CombineJS.embed();
+        let embed = await CombineJS.embed();
         const request = await CombineJS.get(`https://xkcd.com/${comicnum1}/info.0.json`);
         const response = await request.json();
         embed.setTitle(`#${response.num} - ${response.title}`);
