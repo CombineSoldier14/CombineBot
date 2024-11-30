@@ -22,7 +22,7 @@ module.exports = {
         feed.items.forEach((item: any) =>
             fields.push({ name: item.title, value: `[Link to post](${item.link})` })
         )
-        let embed = CombineJS.embed();
+        let embed = await CombineJS.embed();
         embed.setTitle(feed.title);
         if (feed.description = null) {
             var desc = "";
