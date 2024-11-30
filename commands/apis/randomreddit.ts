@@ -22,7 +22,7 @@ module.exports = {
             return;
         }
         const j = r.json();
-        let embed = CombineJS.embed();
+        let embed = await CombineJS.embed();
         embed
             .setTitle(`${j.title}`)
             .setDescription(`Upvote score: ${j.ups}`)
