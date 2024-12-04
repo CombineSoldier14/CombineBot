@@ -6,6 +6,7 @@ class core {
                 const embed = new EmbedBuilder();
                 const info = await this.getBotInfo();
                 embed.setFooter({text: `CombineJS v${info.VERSION}`, iconURL: 'https://i.postimg.cc/T3XH8Rwm/image.png'});
+                embed.setColor(0xffd700);
                 return embed;
         }
 
