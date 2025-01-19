@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -22,7 +22,7 @@ module.exports = {
             return;
         }
         const j = r.json();
-        let embed = await CombineJS.embed();
+        let embed = await CombineBot.embed();
         embed
             .setTitle(`${j.title}`)
             .setDescription(`Upvote score: ${j.ups}`)

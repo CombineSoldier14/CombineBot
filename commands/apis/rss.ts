@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 let Parser = require('rss-parser');
 
 let parser = new Parser();
@@ -22,7 +22,7 @@ module.exports = {
         feed.items.forEach((item: any) =>
             fields.push({ name: item.title, value: `[Link to post](${item.link})` })
         )
-        let embed = await CombineJS.embed();
+        let embed = await CombineBot.embed();
         embed.setTitle(feed.title);
         if (feed.description = null) {
             var desc = "";

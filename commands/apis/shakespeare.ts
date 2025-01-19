@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 const wait = require('node:timers/promises').setTimeout;
 
 module.exports = {

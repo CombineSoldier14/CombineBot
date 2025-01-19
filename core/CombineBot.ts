@@ -5,7 +5,7 @@ class core {
         async embed() {
                 const embed = new EmbedBuilder();
                 const info = await this.getBotInfo();
-                embed.setFooter({text: `CombineJS v${info.VERSION}`, iconURL: 'https://i.postimg.cc/T3XH8Rwm/image.png'});
+                embed.setFooter({text: `CombineBot v${info.VERSION}`, iconURL: 'https://i.postimg.cc/T3XH8Rwm/image.png'});
                 embed.setColor(0xffd700);
                 return embed;
         }
@@ -19,7 +19,7 @@ class core {
                 var response = await fetch(url, {
                         headers: {
                                 "Content-type": "application/json; charset=UTF-8",
-                                "User-Agent": "CombineJS (https://github.com/CombineSoldier14/CombineJS +combineemails14@gmail.com); curl/8.4.0",
+                                "User-Agent": "CombineBot (https://github.com/CombineSoldier14/CombineBot +combineemails14@gmail.com); curl/8.4.0",
                                 "Accept": "application/json",
                                 "Upgrade-Insecure-Requests": "1",
                                 "Accept-Encoding": "gzip",
@@ -35,7 +35,7 @@ class core {
 		        body: JSON.stringify(body),
                         headers: {
                                 "Content-type": "application/json; charset=UTF-8",
-                                "User-Agent": "CombineJS (https://github.com/CombineSoldier14/CombineJS +combineemails14@gmail.com); curl/8.4.0",
+                                "User-Agent": "CombineBot (https://github.com/CombineSoldier14/CombineBot +combineemails14@gmail.com); curl/8.4.0",
                                 "Accept": "application/json",
                                 "Upgrade-Insecure-Requests": "1",
                                 "Accept-Encoding": "gzip",
@@ -47,6 +47,6 @@ class core {
         }
 }
 
-let CombineJS = new core();
+let CombineBot = new core();
 
-module.exports = { CombineJS };
+module.exports = { CombineBot };

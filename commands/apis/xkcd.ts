@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -18,8 +18,8 @@ module.exports = {
         } else {
             var comicnum1 = `/${comicnum}`;
         };
-        let embed = await CombineJS.embed();
-        const request = await CombineJS.get(`https://xkcd.com/${comicnum1}/info.0.json`);
+        let embed = await CombineBot.embed();
+        const request = await CombineBot.get(`https://xkcd.com/${comicnum1}/info.0.json`);
         const response = await request.json();
         embed.setTitle(`#${response.num} - ${response.title}`);
         embed.setDescription(`${response.alt}`);

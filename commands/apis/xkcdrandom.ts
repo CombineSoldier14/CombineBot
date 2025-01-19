@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 const rn = require('random-number');
 
 const options = {
@@ -14,9 +14,9 @@ module.exports = {
         .setDescription('Get a random XKCD comic!'),
     
     async execute (interaction: any) {
-        const request = await CombineJS.get(`https://xkcd.com/${rn(options)}/info.0.json`);
+        const request = await CombineBot.get(`https://xkcd.com/${rn(options)}/info.0.json`);
         const response = await request.json();
-        let embed = await CombineJS.embed();
+        let embed = await CombineBot.embed();
         embed.setTitle(`#${response.num} - ${response.title}`);
         embed.setDescription(`${response.alt}`);
         embed.setFooter({text: `${response.month}/${response.day}/${response.year}`});

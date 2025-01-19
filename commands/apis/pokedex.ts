@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -14,7 +14,7 @@ module.exports = {
     async execute(interaction: any) {
         await interaction.deferReply();
         const pokemon = interaction.options.getString('pokemon');
-        const r = await CombineJS.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+        const r = await CombineBot.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
         const status = r.status;
         if (status == 404) {
             await interaction.editReply(":x: Pokemon not found! Did you misspell it?");
@@ -25,7 +25,7 @@ module.exports = {
         for (let ability of j.abilities) {
             abilities = abilities + `${ability.ability.name}`;
         }
-        let embed = await CombineJS.embed();
+        let embed = await CombineBot.embed();
         embed
             .setTitle(`Info on ${pokemon}`)
             .setDescription(`

@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
 const { ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 
 const learnmore = new ButtonBuilder()
      .setLabel('Learn More!')
@@ -11,7 +11,7 @@ const learnmore = new ButtonBuilder()
 const ghbutton = new ButtonBuilder()
      .setLabel('GitHub')
      .setStyle(ButtonStyle.Link)
-     .setURL('https://github.com/CombineSoldier14/CombineJS')
+     .setURL('https://github.com/CombineSoldier14/CombineBot')
 
 const invitebutton = new ButtonBuilder()
      .setLabel('Invite the bot!')
@@ -26,7 +26,7 @@ module.exports = {
 		.setName('about')
 		.setDescription('About the bot'),
 	async execute(interaction: any) {
-          const info = await CombineJS.getBotInfo();
+          const info = await CombineBot.getBotInfo();
           await interaction.channel.send('Loading data...').then (async (msg) => {
           msg.delete();
           const latency = `${msg.createdTimestamp - interaction.createdTimestamp} ms`

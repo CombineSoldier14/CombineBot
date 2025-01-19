@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -24,12 +24,12 @@ module.exports = {
     async execute(interaction: any) {
         const animal = interaction.options.getString('animal');
         const code = interaction.options.getString('code');
-        const rurl = await CombineJS.get(`https://http.${animal}/${code}.jpg`);
+        const rurl = await CombineBot.get(`https://http.${animal}/${code}.jpg`);
         if (rurl.status == "404") {
             await interaction.reply(':x: Animal for status code does not exist!');
             return;
         }
-        const embed = await CombineJS.embed();
+        const embed = await CombineBot.embed();
         embed
             .setTitle(`${animal} ${code}`)
             .setImage(`https://http.${animal}/${code}.jpg`)

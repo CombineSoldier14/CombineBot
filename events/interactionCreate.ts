@@ -34,7 +34,7 @@ module.exports = {
 			const reportGithubIssue = new ButtonBuilder()
 				.setLabel('Open Github Issue')
 				.setStyle(ButtonStyle.Link)
-				.setURL('https://github.com/CombineSoldier14/CombineJS/issues/new')
+				.setURL('https://github.com/CombineSoldier14/CombineBot/issues/new')
 
 
 			const errorRow = new ActionRowBuilder()
@@ -57,7 +57,7 @@ module.exports = {
 					}),
 					headers: {
 						"Content-type": "application/json; charset=UTF-8",
-						"User-Agent": "CombineJS (https://github.com/CombineSoldier14/CombineJS +combineemails14@gmail.com); curl/8.4.0",
+						"User-Agent": "CombineBot (https://github.com/CombineSoldier14/CombineBot +combineemails14@gmail.com); curl/8.4.0",
 						"Accept": "application/json,text/plain,application/xml",
 						"Upgrade-Insecure-Requests": "1",
 						"Accept-Encoding": "gzip",

@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 const { eightball_list } = require('../../core/lists.js')
 const rn = require('random-number');
 
@@ -24,7 +24,7 @@ module.exports = {
 
     async execute(interaction: any) {
         const question = interaction.options.getString('question')
-        let embed = await CombineJS.embed();
+        let embed = await CombineBot.embed();
         embed.setTitle(question)
         embed.setDescription(eight_choice)
         embed.setColor(0x696969)

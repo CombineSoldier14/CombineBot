@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineJS } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
         ),
     async execute (interaction: any) {
         const user = interaction.options.getUser('user')
-            let embed = await CombineJS.embed();
+            let embed = await CombineBot.embed();
             embed.setTitle(`Info on ${user.username}`)
             embed.setDescription(`Display Name: ${user.displayName}\nCreated at: ${user.createdAt}\nID: ${user.id}\nTag: ${user.tag}\nIs a Bot?: ${user.bot}`)
             embed.setThumbnail(`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=1024`)
