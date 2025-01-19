@@ -5,7 +5,8 @@ class core {
         async embed() {
                 const embed = new EmbedBuilder();
                 const info = await this.getBotInfo();
-                embed.setFooter({text: `CombineBot v${info.VERSION}`, iconURL: 'https://i.postimg.cc/T3XH8Rwm/image.png'});
+                const { ICON } = require('../info.json');
+                embed.setFooter({text: `CombineBot v${info.VERSION}`, iconURL: ICON});
                 embed.setColor(0xffd700);
                 return embed;
         }

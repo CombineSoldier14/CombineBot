@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { CombineBot } = require('../../core/combinejs.js');
+const { CombineBot } = require('../../core/CombineBot.js');
 
 module.exports = {
     data: new SlashCommandBuilder()

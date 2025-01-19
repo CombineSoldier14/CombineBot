@@ -24,6 +24,7 @@
                 "./commands/fun/*",
                 "./commands/info/*",
                 "./commands/mbti/*",
-                "./commands/utility/*"
+                "./commands/utility/*",
+                "./commands/moderation/*"
               ]
   }
