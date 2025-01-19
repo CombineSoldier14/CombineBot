@@ -33,7 +33,7 @@ module.exports = {
           const aboutEmbed = new EmbedBuilder()
               .setColor(0xffd700)
               .setTitle(`About ${info.NAME} v${info.VERSION}`)
-              .setDescription(`${info.NAME} is a discord bot written in JavaScript on discord.js, with many slash commands for moderation and fun!\n${info.NAME}'s birthday is **8/13/2024**.`)
+              .setDescription(`${info.NAME} is a discord bot written in JavaScript on discord.js, with many slash commands for moderation and fun!\n${info.NAME}'s birthday is **12/11/2023**.`)
               .setFields(
                    { name: "Latest Addition", value: `${info.LATEST_ADDITION}` },
                    { name: "Ping/Latency :ping_pong:", value: latency }
