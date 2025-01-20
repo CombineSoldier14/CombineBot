@@ -15,9 +15,8 @@ WORKDIR /docker
 
 ENV NODE_ENV=production
 
-COPY --from=build /docker/package.json /docker/package.json
-COPY --from=build /docker/package-lock.json /docker/package-lock.json
 COPY --from=build /docker/output /docker
+COPY --from=build /docker/package.json /docker/package.json
 
 RUN npm install --only=production
 
