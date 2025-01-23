@@ -28,6 +28,6 @@ CombineBot is a full open source discord bot made by me. It has 30+ slash comman
 Anyone can add CombineBot to their server on [CombineBot's webpage](https://www.combinesoldier14.site/combinebot)!
 
 ## More!
-[Terms of Service](https://combinebot.blogspot.com/p/combinebot-terms-of-service.html)
+[Terms of Service](https://www.combinesoldier14.site/combinebot-privacy-policy)
 
-[Privacy Policy](https://combinebot.blogspot.com/p/combinebot-privacy-policy.html)
+[Privacy Policy](https://www.combinesoldier14.site/combinebot-tos)
