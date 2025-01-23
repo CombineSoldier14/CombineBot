@@ -13,13 +13,19 @@ module.exports = {
                 .setRequired(true)
         ),
     async execute (interaction: any) {
-        const user = interaction.options.getUser('user')
+        const user = interaction.options.getUser('user');
             let embed = await CombineBot.embed();
-            embed.setTitle(`Info on ${user.username}`)
-            embed.setDescription(`Display Name: ${user.displayName}\nCreated at: ${user.createdAt}\nID: ${user.id}\nTag: ${user.tag}\nIs a Bot?: ${user.bot}`)
-            embed.setThumbnail(`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=1024`)
-            embed.setColor(0xffd700)
-        await interaction.reply({ embeds: [embed] })
+            embed.setTitle(`Info on ${user.username}`);
+            embed.setFields(
+                { name: 'Display Name', value: (user.displayName).toString() },
+                { name: 'Created at', value: (user.createdAt).toString() },
+                { name: 'ID', value: (user.id).toString() },
+                { name: 'Tag', value: (user.tag).toString() },
+                { name: 'Is a Bot?', value: (user.bot).toString() }
+            );
+            embed.setThumbnail(`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=1024`);
+            embed.setColor(0xffd700);
+        await interaction.reply({ embeds: [embed] });
     },
 };
 export {};
