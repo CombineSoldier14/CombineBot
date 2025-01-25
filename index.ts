@@ -2,7 +2,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 
-require('dotenv').config()
+if (process.env.NODE_ENV !== 'production') {
+	console.warn('Loading .env file in development mode.');
+	require('dotenv').config();
+}
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
