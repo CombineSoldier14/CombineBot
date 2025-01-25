@@ -18,6 +18,10 @@ ENV NODE_ENV=production
 COPY --from=build /docker/output /docker
 COPY --from=build /docker/package.json /docker/package.json
 
-RUN npm install --only=production
+# Any JSON files in the root directory we might need!
+# i.e, info.json etc
+COPY --from=build /docker/*.json /docker
+
+RUN npm install --omit=dev
 
 CMD ["npm", "run", "start"]
