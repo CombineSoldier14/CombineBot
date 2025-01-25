@@ -7,10 +7,19 @@ module.exports = {
         .setName('serverinfo')
         .setDescription('Shows detailed info on the server you\'re in'),
     async execute (interaction: any) {
+            const owner = await interaction.guild.fetchOwner();
             let embed = await CombineBot.embed();
             embed.setTitle(`Info on ${interaction.guild.name}`);
-            embed.setDescription(`Created at: ${interaction.guild.createdAt}\nID: ${interaction.guild.id}\nMembers: ${interaction.guild.memberCount}`);
-            embed.setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.png?size=1024`);
+            embed.setFields(
+                { name: 'Name', value: (interaction.guild.name).toString() },
+                { name: 'ID', value: (interaction.guild.id).toString() },
+                { name: 'Owner', value: (owner.displayName).toString() },
+                { name: 'Members', value: (interaction.guild.memberCount).toString() },
+                { name: 'Created at', value: (interaction.guild.createdAt).toString() }
+            );
+            if(interaction.guild.icon != null) {
+                embed.setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.png?size=1024`);
+            }
             embed.setColor(0xffd700);
         await interaction.reply({ embeds: [embed] });
     },
