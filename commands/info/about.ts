@@ -29,11 +29,17 @@ module.exports = {
           const info = await CombineBot.getBotInfo();
           await interaction.channel.send('Loading data...').then (async (msg) => {
           msg.delete();
+          const guildCount = interaction.client.guilds.cache.size;
+          let memberCount = 0;
+          interaction.client.guilds.cache.forEach((guild: any) => {
+              memberCount += guild.memberCount;
+          });
+          memberCount -= guildCount;
           const latency = `${msg.createdTimestamp - interaction.createdTimestamp} ms`
           const aboutEmbed = new EmbedBuilder()
               .setColor(0xffd700)
               .setTitle(`About ${info.NAME} v${info.VERSION}`)
-              .setDescription(`${info.NAME} is a discord bot written in JavaScript on discord.js, with many slash commands for moderation and fun!\n${info.NAME}'s birthday is **12/11/2023**.`)
+              .setDescription(`${info.NAME} is a discord bot written in JavaScript on discord.js, with many slash commands for moderation and fun!\nCombineBot serves **${memberCount}** users in **${guildCount}** servers.\n${info.NAME}'s birthday is **12/11/2023**.`)
               .setFields(
                    { name: "Latest Addition", value: `${info.LATEST_ADDITION}` },
                    { name: "Ping/Latency :ping_pong:", value: latency }
