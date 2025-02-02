@@ -25,6 +25,7 @@
                 "./commands/info/*",
                 "./commands/mbti/*",
                 "./commands/utility/*",
-                "./commands/moderation/*"
+                "./commands/moderation/*",
+                "./commands/tests/*"
               ]
   }
