@@ -25,7 +25,7 @@ CombineBot is a full open source discord bot made by me. It has 30+ slash comman
 * Updated often with 30+ slash commands!
 
 ## How do I add it to my server?
-Anyone can add CombineBot to their server on [CombineBot's webpage](https://www.combinesoldier14.site/combinebot)!
+Anyone can add CombineBot to their server on [CombineBot's webpage](https://combinesoldier14.github.io/combinebot)!
 
 ## More!
 [Terms of Service](https://www.combinesoldier14.site/combinebot-privacy-policy)
