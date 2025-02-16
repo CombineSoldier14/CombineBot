@@ -24,7 +24,10 @@ module.exports = {
         let embed = await CombineBot.embed()
             embed
                 .setTitle(`Definition of ${word}`)
-                .setDescription(`**Definition:** ${j.definition}\n\n**Example:** ${j.example}`)
+                .setFields(
+                    { name: 'Definition', value: (j.definition).toString() },
+                    { name: 'Example', value: (j.example).toString() }
+                )
                 .setThumbnail('https://i.postimg.cc/cLxwjrT0/ud.png');
         await interaction.editReply({ embeds: [embed] });
     }
