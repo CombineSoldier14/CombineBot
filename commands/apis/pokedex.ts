@@ -28,13 +28,13 @@ module.exports = {
         let embed = await CombineBot.embed();
         embed
             .setTitle(`Info on ${pokemon}`)
-            .setDescription(`
-**Abilities:** ${abilities}\n
-**Base XP:** ${j.base_experience}\n
-**Order:** ${j.order}\n
-**Weight:** ${j.weight}\n
-**Height:** ${j.height}\n
-`)
+            .setFields(
+                { name: 'Abilities', value: (abilities).toString() },
+                { name: 'Base XP', value: (j.base_experience).toString() },
+                { name: 'Order', value: (j.order).toString() },
+                { name: 'Weight', value: (j.weight).toString() },
+                { name: 'Height', value: (j.height).toString() }
+            )
             .setThumbnail(j.sprites.front_default);
         await interaction.editReply({ embeds: [embed] });
     }
