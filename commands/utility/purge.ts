@@ -15,7 +15,7 @@ module.exports = {
       
         if (amount < 1 || amount > 100) {
             return await interaction.reply({
-                content: 'Please provide a number between 1 and 100.',
+                content: ':x: Please provide a number between 1 and 100.',
                 ephemeral: true
             });
         }
