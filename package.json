@@ -1,6 +1,6 @@
 {
   "name": "combinebot",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "description": "A discord bot created in discord.js with plenty of slash commands for moderation and fun!",
   "main": "index.js",
   "scripts": {

@@ -26,6 +26,8 @@ module.exports = {
 		.setName('about')
 		.setDescription('About the bot'),
 	async execute(interaction: any) {
+          const r = await CombineBot.get('https://api.github.com/repos/CombineSoldier14/CombineBot/commits/master');
+          let j = await r.json();
           const info = await CombineBot.getBotInfo();
           await interaction.channel.send('Loading data...').then (async (msg) => {
           msg.delete();
@@ -38,10 +40,11 @@ module.exports = {
           const latency = `${msg.createdTimestamp - interaction.createdTimestamp} ms`
           const aboutEmbed = new EmbedBuilder()
               .setColor(0xffd700)
+              .setThumbnail(info.ICON)
               .setTitle(`About ${info.NAME} v${info.VERSION}`)
               .setDescription(`${info.NAME} is a discord bot written in JavaScript on discord.js, with many slash commands for moderation and fun!\nCombineBot serves **${memberCount}** users in **${guildCount}** servers.\n${info.NAME}'s birthday is **12/11/2023**.`)
               .setFields(
-                   { name: "Latest Addition", value: `${info.LATEST_ADDITION}` },
+                   { name: "Latest Addition (GitHub)", value: `${j.commit.message}` },
                    { name: "Ping/Latency :ping_pong:", value: latency }
               )
               .setThumbnail('https://cdn.discordapp.com/avatars/1254653481978167346/65b694dd9593cd55f3a49096f9a35319.png?size=1024')
