@@ -26,7 +26,7 @@ module.exports = {
         const time = interaction.options.getNumber('time');
         if(member.kickable) {
             try {
-                await member.timeout(time * 60 * 1000, reason);
+                await member.timeout(time * 60000, reason);
             } catch (error) {
                 return await interaction.reply({ content: `Failed to timeout ${user.username}. They most likely have a higher role.`, ephemeral: true });
             }
