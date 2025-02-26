@@ -20,8 +20,8 @@ const statuses = [{
     "status":"in the JS interpreter",
 },
 {
-    "type":"WATCHING",
-    "status":"Ace Attorney: Dual Destinies",
+    "type":"PLAYING",
+    "status":"Ace Attorney",
 }];
 
 const questions = [
