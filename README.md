@@ -12,7 +12,7 @@
 CombineBot is a full open source discord bot made by me. It has 30+ slash commands for moderation and fun, perfect for any server.
 
 ## Features!
-* MBTI Test command (coming soon)
+* MBTI Test command
 
 * No premium or paid features
 
