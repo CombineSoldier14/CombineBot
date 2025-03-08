@@ -48,3 +48,5 @@ What are you waiting for?! You need CombineBot in your server today!
 [Terms of Service](https://www.combinesoldier14.site/combinebot-privacy-policy)
 
 [Privacy Policy](https://www.combinesoldier14.site/combinebot-tos)
+
+[Official Website](https://combinebot.github.io)
