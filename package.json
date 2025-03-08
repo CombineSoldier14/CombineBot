@@ -1,6 +1,6 @@
 {
   "name": "combinebot",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "description": "A discord bot created in discord.js with plenty of slash commands for moderation and fun!",
   "main": "index.js",
   "scripts": {
@@ -19,10 +19,11 @@
     "minecraft-status": "^1.1.0",
     "random-number": "^0.0.9",
     "rss-parser": "^3.13.0",
+    "tsc": "^2.0.4",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
+    "@types/node": "^22.13.9",
     "discord-api-types": "^0.37.94",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
