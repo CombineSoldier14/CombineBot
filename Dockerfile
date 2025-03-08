@@ -24,4 +24,6 @@ COPY --from=build /docker/*.json /docker/
 
 RUN npm install --omit=dev
 
+RUN npm install typescript
+
 CMD ["npm", "run", "start"]
