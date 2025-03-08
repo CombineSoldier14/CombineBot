@@ -21,7 +21,7 @@ module.exports = {
             await interaction.editReply(':x: Subreddit not found! Did you misspell it?');
             return;
         }
-        const j = r.json();
+        const j = r.json()[0];
         let embed = await CombineBot.embed();
         embed
             .setTitle(`${j.title}`)
