@@ -15,7 +15,7 @@ module.exports = {
     async execute (interaction: any) {
         await interaction.deferReply();
         const sub = interaction.options.getString('sub');
-        const r = await this.get(`https://meme-api.com/gimme/${sub}`);
+        const r = await CombineBot.get(`https://meme-api.com/gimme/${sub}`);
         const status = r.status;
         if (status == 404) {
             await interaction.editReply(':x: Subreddit not found! Did you misspell it?');
