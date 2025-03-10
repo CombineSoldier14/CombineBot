@@ -10,7 +10,7 @@
     "run-ts": "tsc --build --verbose && cd output && cp .env output && echo ---------------- && node index.js"
   },
   "author": "CombineSoldier14",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "cowsay": "^1.6.0",
     "discord.js": "^14.15.3",
