@@ -16,7 +16,7 @@ module.exports = {
 			return;
 		}
 
-		console.log(` - ${interaction.commandName} was just used! `)
+		console.log(` - /${interaction.commandName} was just used! `)
 
 		try {
 			await command.execute(interaction);
