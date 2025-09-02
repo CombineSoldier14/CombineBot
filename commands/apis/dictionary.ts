@@ -16,7 +16,7 @@ module.exports = {
         const word = interaction.options.getString('word');
         const r = await CombineBot.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         if (r.status == 404) {
-            await interaction.deferReply(`:x: Word \"**${word}**\" not found! Perhaps you misspelled it?`);
+            await interaction.editReply(`:x: Word \"**${word}**\" not found! Perhaps you misspelled it?`);
             return;
         }
         let j = await r.json();
