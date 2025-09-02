@@ -37,10 +37,10 @@ It is updated as often as I can (when I actually know what to do that is) and is
   * When designing this bot, I took into account a lot of things I personally would like to see added into discord personally (such as users making embeds) and allowing people to access useful data easily from the comfort of their group chat. (APIs).
 
 * Host your own instance!
-  * I openly support people hosting their own instances of the bot, in fact I designed the core of the bot with that in mind with the supplied Dockerfile and an easy to change `info.json` with bot info. So whether you want to rehaul the entire system, or you just CombineBot is a stupid name (I don't blame you), then you can easily change that for your server.
+  * I openly support people hosting their own instances of the bot, in fact I designed the core of the bot with that in mind with the supplied Dockerfile and an easy to change `discord-info.json` and `package.json` with bot info. So whether you want to rehaul the entire system, or you just think CombineBot is a stupid name (I don't blame you), then you can easily change that for your server.
 
 ## How do I add it to my server?
-Anyone can add CombineBot to their server on [CombineBot's webpage](https://combinesoldier14.github.io/combinebot)!
+Anyone can add CombineBot to their server on [CombineBot's webpage](https://combinebot.github.io)!
 
 What are you waiting for?! You need CombineBot in your server today!
 
