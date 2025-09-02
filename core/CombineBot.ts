@@ -2,18 +2,18 @@ const { EmbedBuilder } = require('discord.js');
 require('dotenv').config();
 
 class core {
-        async embed() {
-                const embed = new EmbedBuilder();
-                const info = await this.getBotInfo();
-                const { ICON } = require('../info.json');
-                embed.setFooter({text: `CombineBot v${info.VERSION}`, iconURL: ICON});
-                embed.setColor(0xffd700);
-                return embed;
-        }
 
         async getBotInfo() {
-                const j = require('../info.json');
+                const j = require('../discord-info.json');
                 return j;
+        }
+
+        async embed() {
+                const embed = new EmbedBuilder();
+                const info  = await this.getBotInfo();
+                embed.setFooter({text: `CombineBot v${info.VERSION}`, iconURL: info.ICON});
+                embed.setColor(0xffd700);
+                return embed;
         }
 
         async get(url: string) {
