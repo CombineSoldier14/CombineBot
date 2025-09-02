@@ -19,7 +19,7 @@ It is updated as often as I can (when I actually know what to do that is) and is
   * Cognitive Function/Enneagram test coming soon!
 
 * No premium or paid features
-  * This bot is completely 100% free and always will be. Useful services such as these should always be free and with the supplied Dockerfile you can host your own instance too!
+  * This bot is completely 100% free and open source, and always will be. Useful services such as these should always be free and with the supplied Dockerfile you can host your own instance too!
 
 * Make your own embed command
   * Actually create an embed with a title, description, footer, and HTML color tag to get your messages out there and be recognized!
