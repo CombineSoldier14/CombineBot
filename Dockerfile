@@ -6,7 +6,6 @@ WORKDIR /docker
 COPY . /docker
 
 RUN npm install
-RUN npm install typescript
 RUN npm run build
 
 # Stage 2: Run the project
