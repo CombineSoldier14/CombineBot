@@ -33,7 +33,7 @@ module.exports = {
         } else {
             return await interaction.reply({ content: `I can't timeout ${user.username}. They have a higher role than me.`, ephemeral: true });
         }
-        await interaction.reply(`User ${user} has been timed out for ${time} minutes for the reason: ${reason}`);
+        await interaction.reply(`User ${user} has been timed out for ${time} minutes for the reason: ${reason}\n-# NOTE: To remove a timeout from a user, simply time them out again for 0 minutes.`);
     }
 }
 
