@@ -59,7 +59,6 @@ module.exports = {
 	async execute(interaction: any) {
 		const ctext = interaction.options.getString('text');
 		const cow = interaction.options.getString('cow') || 'default';
-		console.log(cowNames);
 		await interaction.reply(`
 		\`\`\`
 		${cowsay.say(

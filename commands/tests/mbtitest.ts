@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const { CombineBot } = require('../../core/CombineBot.js');
-const { longnames, questions } = require('../../core/lists.js');
+const { longnames, questions, mbtiinfo } = require('../../core/lists.js');
 
 class Buttons{
 
@@ -39,14 +39,8 @@ class Mbtitest {
     snstatus;
     tfstatus;
     jpstatus;
-    funfact;
-    famousfiction;
     message;
     thread;
-    famoustype;
-    iconp;
-    stack;
-    color;
     question = questions[this.currentQuestion];
     async start(interaction: any) {
         this.message = await interaction.channel.send("Please continue in this thread.");
@@ -65,119 +59,7 @@ class Mbtitest {
         this.snstatus = (this.stats.S || 0) >= (this.stats.N || 0) ? 'S' : 'N';
         this.tfstatus = (this.stats.T || 0) >= (this.stats.F || 0) ? 'T' : 'F';
         this.jpstatus = (this.stats.J || 0) >= (this.stats.P || 0) ? 'J' : 'P';
-        if(this.iestatus == 'I' && this.snstatus == 'N' && this.tfstatus == 'T' && this.jpstatus == 'J') {
-            this.funfact = 'INTJ is the most introverted type, and is great with coming up with plans!';
-            this.famousfiction = 'Emperor Palpatine and Giorno Giovanna';
-            this.famoustype = 'Christopher Nolan and Michelle Obama';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/intj-architect.png';
-            this.stack = 'Ni-Te-Fi-Se';
-            this.color = 0x00CC33FF;
-        } else if(this.iestatus == 'I' && this.snstatus == 'N' && this.tfstatus == 'T' && this.jpstatus == 'P') {
-            this.funfact = 'INTP are the most intelligent type and are likely to be scientists!';
-            this.famousfiction = 'Rick Sanchez and L Lawliet';
-            this.famoustype = 'Albert Einstein and Abraham Lincoln';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/intp-logician.png';
-            this.stack = 'Ti-Ne-Si-Fe';
-            this.color = 0x00CC33FF;
-        } else if(this.iestatus == 'I' && this.snstatus == 'S' && this.tfstatus == 'T' && this.jpstatus == 'J') {
-            this.funfact = 'ISTJ is the most introverted type, and is great with coming up with plans!';
-            this.famousfiction = 'Hermoine Granger and Sheldon Cooper';
-            this.famoustype = 'Angela Merkel and George Washington';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/istj-logistician.png';
-            this.stack = 'Si-Te-Fi-Ne';
-            this.color = 0x0000FFFF;
-        } else if(this.iestatus == 'I' && this.snstatus == 'S' && this.tfstatus == 'T' && this.jpstatus == 'P') {
-            this.funfact = 'ISTP is the most introverted type, and is great with coming up with plans!';
-            this.famousfiction = 'James Bond and Batman';
-            this.famoustype = 'Clint Eastwood and Bruce Lee';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/istp-virtuoso.png';
-            this.stack = 'Ti-Se-Ni-Fe';
-            this.color = 0x00FFCC33;
-        } else if(this.iestatus == 'I' && this.snstatus == 'N' && this.tfstatus == 'F' && this.jpstatus == 'J') {
-            this.funfact = 'INFJ are the most intuitive type and are the most extroverted introverts! They tend to be very spiritual.';
-            this.famousfiction = 'Frodo Baggins and Aragorn';
-            this.famoustype = 'Martin Luther King Jr. and Nelson Mandela';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/infj-advocate.png';
-            this.stack = 'Ni-Fe-Ti-Se';
-            this.color = 0x0099FF99;
-        } else if(this.iestatus == 'I' && this.snstatus == 'N' && this.tfstatus == 'F' && this.jpstatus == 'P') {
-            this.funfact = 'INFP are the most popular type for fictional main characters!';
-            this.famousfiction = 'Luke Skywalker and Will Byers';
-            this.famoustype = 'J.R.R. Tolkien and William Shakespeare';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/infp-mediator.png';
-            this.stack = 'Fi-Ne-Si-Te';
-            this.color = 0x0099FF99;
-        } else if(this.iestatus == 'I' && this.snstatus == 'S' && this.tfstatus == 'F' && this.jpstatus == 'J') {
-            this.funfact = 'ISFJ is the most introverted type, and is great with coming up with plans!';
-            this.famousfiction = 'Samwise Gamgee and Bilbo Baggins';
-            this.famoustype = 'Queen Elizabeth II and Mother Teresa';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/isfj-defender.png';
-            this.stack = 'Si-Fe-Ti-Ne';
-            this.color = 0x0000FFFF;
-        } else if(this.iestatus == 'I' && this.snstatus == 'S' && this.tfstatus == 'F' && this.jpstatus == 'P') {
-            this.funfact = 'ISFP is the most introverted type, and is great with coming up with plans!';
-            this.famousfiction = 'Jesse Pinkman and Eleven';
-            this.famoustype = 'Michael Jackson and Lady Gaga';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/isfp-adventurer.png';
-            this.stack = 'Fi-Se-Ni-Te';
-            this.color = 0x00FFCC33;
-        } else if(this.iestatus == 'E' && this.snstatus == 'N' && this.tfstatus == 'T' && this.jpstatus == 'J') {
-            this.funfact = 'ENTJ is great with planning, and are most likely to be leaders.';
-            this.famousfiction = 'Thanos and Light Yagami';
-            this.famoustype = 'Steve Jobs and Margaret Thatcher';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/entj-commander.png';
-            this.stack = 'Te-Ni-Se-Fi';
-            this.color = 0x00CC33FF;
-        } else if(this.iestatus == 'E' && this.snstatus == 'N' && this.tfstatus == 'T' && this.jpstatus == 'P') {
-            this.funfact = 'ENTP is great at debating, and are likely to push their ideas very strongly!';
-            this.famousfiction = 'Rick Sanchez and L Lawliet';
-            this.famoustype = 'Thomas Edison and Leonardo da Vinci';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/entp-debater.png';
-            this.stack = 'Ne-Ti-Fe-Si';
-            this.color = 0x00CC33FF;
-        } else if(this.iestatus == 'E' && this.snstatus == 'S' && this.tfstatus == 'T' && this.jpstatus == 'J') {
-            this.funfact = 'ESTJ is the most extroverted type, and is great with coming up with plans!';
-            this.famousfiction = 'Franziska von Karma and Mr. Krabs';
-            this.famoustype = 'Frank Sinatra and Judge Judy';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/estj-executive.png';
-            this.stack = 'Te-Si-Ne-Fi';
-            this.color = 0x0000FFFF;
-        } else if(this.iestatus == 'E' && this.snstatus == 'S' && this.tfstatus == 'T' && this.jpstatus == 'P') {
-            this.funfact = 'ESTP is the most extroverted type, and is great with coming up with plans!';
-            this.famousfiction = 'James Bond and Batman';
-            this.famoustype = 'Ernest Hemingway and Madonna';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/estp-entrepreneur.png';
-            this.stack = 'Se-Ti-Fe-Ni';
-            this.color = 0x00FFCC33;
-        } else if(this.iestatus == 'E' && this.snstatus == 'N' && this.tfstatus == 'F' && this.jpstatus == 'J') {
-            this.funfact = 'ENFJ are very good and charismatic leaders!';
-            this.famousfiction = 'Mike Wheeler and Homelander';
-            this.famoustype = 'Oprah Winfrey and Barack Obama';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/enfj-protagonist.png';
-            this.stack = 'Fe-Ni-Se-Ti';
-            this.color = 0x0099FF99;
-        } else if(this.iestatus == 'E' && this.snstatus == 'N' && this.tfstatus == 'F' && this.jpstatus == 'P') {
-            this.funfact = 'ENFPs are great at spreading their passions, and are the most introverted extroverts!';
-            this.famousfiction = 'Michael Scott and Joyce Byers';
-            this.famoustype = 'Walt Disney and Robin Williams';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/enfp-campaigner.png';
-            this.stack = 'Ne-Fi-Te-Si';
-            this.color = 0x0099FF99;
-        } else if(this.iestatus == 'E' && this.snstatus == 'S' && this.tfstatus == 'F' && this.jpstatus == 'J') {
-            this.funfact = 'ESFJ is the most extroverted type, and is great with coming up with plans!';
-            this.famousfiction = 'Samwise Gamgee and Bilbo Baggins';
-            this.famoustype = 'Taylor Swift and Jennifer Lopez';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/esfj-consul.png';
-            this.stack = 'Fe-Si-Ne-Ti';
-            this.color = 0x0000FFFF;
-        } else if(this.iestatus == 'E' && this.snstatus == 'S' && this.tfstatus == 'F' && this.jpstatus == 'P') {
-            this.funfact = 'ESFP is the most extroverted type, and is great with coming up with plans!';
-            this.famousfiction = 'Homer Simpson and Peter Griffin';
-            this.famoustype = 'Marilyn Monroe and Elvis Presley';
-            this.iconp = 'https://www.16personalities.com/static/images/personality-types/avatars/esfp-entertainer.png';
-            this.stack = 'Se-Fi-Te-Ni';
-            this.color = 0x00FFCC33;
-        }
+        const mbtiinfoEntry = mbtiinfo[0][this.iestatus + this.snstatus + this.tfstatus + this.jpstatus];
         let embed = await CombineBot.embed();
         embed.setTitle(`Your MBTI: ${this.iestatus}${this.snstatus}${this.tfstatus}${this.jpstatus}`)
             .setDescription(`_${longnames[0][this.iestatus]}, ${longnames[0][this.snstatus]}, ${longnames[0][this.tfstatus]} and ${longnames[0][this.jpstatus]}_\n
@@ -191,13 +73,12 @@ Feeling (F) Score: **${this.stats.F}**\n
 Judging (J) Score: **${this.stats.J}**\n
 Perceiving (P) Score: **${this.stats.P}**`)
             .addFields(
-                { name: 'Fun Fact', value: this.funfact },
-                { name: 'Famous Fictional Characters', value: this.famousfiction },
-                { name: 'Famous People', value: this.famoustype },
-                { name: 'Cognitive Stack', value: this.stack }
+                { name: `Type: ${mbtiinfoEntry.type}`, value: mbtiinfoEntry.description },
+                { name: `Fun Fact:`, value: mbtiinfoEntry.funfact },
+                { name: `Cognitive Stack:`, value: mbtiinfoEntry.stack }
             )
-            .setThumbnail(this.iconp)
-            .setColor(this.color)
+            .setThumbnail(mbtiinfoEntry.icon)
+            .setColor(mbtiinfoEntry.color);
         const LearnMore = new ButtonBuilder()
             .setLabel(`Learn More about ${this.iestatus}${this.snstatus}${this.tfstatus}${this.jpstatus}`)
             .setStyle(ButtonStyle.Link)
@@ -206,7 +87,7 @@ Perceiving (P) Score: **${this.stats.P}**`)
         LearnRow.addComponents(LearnMore);
         await this.thread.send({ embeds: [embed], components: [LearnRow] });
     }
-    async nextQuestion(interaction, advance = true) {
+    async nextQuestion(interaction: any, advance = true) {
         if (this.currentQuestion >= questions.length - 1) {
             await this.showResults(interaction);
             return;
@@ -226,7 +107,7 @@ Perceiving (P) Score: **${this.stats.P}**`)
             embeds: [embed],
             components: [row]
         });
-        const collectorFilter = (i) => i.user.id === interaction.user.id;
+        const collectorFilter = (i: any) => i.user.id === interaction.user.id;
         const answer = await response.awaitMessageComponent({ filter: collectorFilter });
         await answer.deferUpdate();
         if(answer.customId === 'extremeAgree') {

@@ -5,8 +5,8 @@ class core {
 
         async getBotInfo() {
                 let j = require('../discord-info.json');
-				const j2 = require('../package.json');
-				j.VERSION = j2
+		const j2 = require('../package.json');
+                j.VERSION = j2.version;
                 return j;
         }
 
