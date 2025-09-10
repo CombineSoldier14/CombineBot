@@ -20,12 +20,11 @@
     "random-number": "^0.0.9",
     "rss-parser": "^3.13.0",
     "tsc": "^2.0.4",
-    "yarn": "^1.22.22"
+    "yarn": "^1.22.22",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
     "@types/node": "^22.13.9",
-    "discord-api-types": "^0.37.94",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "discord-api-types": "^0.37.94"
   }
 }
