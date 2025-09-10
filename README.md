@@ -17,6 +17,9 @@ It is updated as often as I can (when I actually know what to do that is) and is
 * MBTI Test command
   * Find your Myers-Briggs Personality type using this command with a test made completely by me!
   * Cognitive Function/Enneagram test coming soon!
+ 
+* Practicality comes first
+  * The bot has a primary focus on tons of moderation and server/role management commands, making it the perfect fit or any server owner or moderator.
 
 * No premium or paid features
   * This bot is completely 100% free and open source, and always will be. Useful services such as these should always be free and with the supplied Dockerfile you can host your own instance too!
