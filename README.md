@@ -25,13 +25,13 @@ It is updated as often as I can (when I actually know what to do that is) and is
   * This bot is completely 100% free and open source, and always will be. Useful services such as these should always be free and with the supplied Dockerfile you can host your own instance too!
 
 * Make your own embed command
-  * Actually create an embed with a title, description, footer, and HTML color tag to get your messages out there and be recognized!
+  * Actually create an embed with a title, description, footer, and HTML color tag to get your messages out there and be recognized! (NOT `eval()`!)
 
 * An actually easy calculator command
   * It makes use of a math parsing library that allows you to just type your equation and have it solved!
 
 * Lots of API fun!
-  * CombineBot makes use of many external APIs to bring you their data in easy to access ways, such as Urban Dictionary info and HTTP animal pictures.
+  * CombineBot makes use of many external APIs to bring you their data in easy to access and fun ways, such as Urban Dictionary info and HTTP animal pictures.
 
 * Updated often with 30+ slash commands!
   * I try to update this bot as often as I can when not working on other projects or when real life is not getting in the way.
@@ -48,8 +48,8 @@ Anyone can add CombineBot to their server on [CombineBot's webpage](https://comb
 What are you waiting for?! You need CombineBot in your server today!
 
 ## More!
-[Terms of Service](https://www.combinesoldier14.site/combinebot-privacy-policy)
+[Terms of Service](https://www.combinesoldier14.github.io/combinebot-privacy-policy)
 
-[Privacy Policy](https://www.combinesoldier14.site/combinebot-tos)
+[Privacy Policy](https://www.combinesoldier14.github.io/combinebot-tos)
 
 [Official Website](https://combinebot.github.io)
