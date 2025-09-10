@@ -4,7 +4,9 @@ require('dotenv').config();
 class core {
 
         async getBotInfo() {
-                const j = require('../discord-info.json');
+                let j = require('../discord-info.json');
+				const j2 = require('../package.json');
+				j.VERSION = j2
                 return j;
         }
 
