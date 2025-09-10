@@ -19,11 +19,11 @@
     "minecraft-status": "^1.1.0",
     "random-number": "^0.0.9",
     "rss-parser": "^3.13.0",
-    "yarn": "^1.22.22",
-    "typescript": "^5.7.3"
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@types/node": "^22.13.9",
-    "discord-api-types": "^0.37.94"
+    "discord-api-types": "^0.37.94",
+    "typescript": "^5.7.3"
   }
 }
